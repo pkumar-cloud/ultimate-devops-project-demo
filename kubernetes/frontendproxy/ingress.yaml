@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: example.com
+    - host: example.com #change to your domain: www.<DomainName>
       http:
         paths:
           - path: "/"
