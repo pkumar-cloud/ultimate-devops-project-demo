@@ -6,6 +6,9 @@ on:
     pull_request:
         branches:
         - main
+    #push:
+    #    branches:
+    #    - main
 
 jobs:
     build:
@@ -90,7 +93,7 @@ jobs:
     updatek8s:
         runs-on: ubuntu-latest
 
-        needs: docker
+        needs: [build, docker, code-quality] #updates manifest when all three passes
 
         steps:
         - name: checkout code
